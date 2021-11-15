@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+// import About from '../views/About.vue'
+import Job from '../views/Job/Job.vue'
+import JobDetail from '../views/Job/JobDetail.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -7,14 +11,37 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  // when your pj is large, use lazy loading routes
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: ()=>{
+      return import ('../views/About.vue')
+    }
+  },
+  {
+    path: '/job',
+    name: 'Job',
+    component: Job
+  },
+  {
+    path: '/jobDetail/:id',
+    name: 'JobDetail',
+    component: JobDetail,
+    props: true  //when dyanmic route create let make props *true*
+  },
+  //redirect
+  {
+    path: '/all-jobs',
+    redirect: '/job'
+  },
+  //catch
+  {
+    path: '/:catch(.*)',  // route not exist (use with regular expression)
+    name: 'NotFound',
+    component: NotFound
   }
+  
 ]
 
 const router = createRouter({
