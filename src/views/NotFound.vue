@@ -1,5 +1,6 @@
 <template>
-  <h2>404 page not found</h2>
+  <h2>404</h2>
+  <p>Page not found</p>
 </template>
 
 <script>
