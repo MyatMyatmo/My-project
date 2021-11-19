@@ -48,3 +48,4 @@ export default {
   color: #42b983;
 }
 </style>
+// "dev": "json-server --watch database/db.json" (json server run shortcut)

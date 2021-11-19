@@ -1,0 +1,7 @@
+{
+    "jobs":[
+        {"title":"project manager","id":1,"detail":"create project manager"},
+        {"title":"web designer","id":2,"detail":"create project designer"},
+        {"title":"web developer","id":3,"detail":"create project developer"}
+    ]
+}

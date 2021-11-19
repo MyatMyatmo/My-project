@@ -12,12 +12,22 @@
 export default {
     data(){
         return{
-            jobs:[
-                {id:"1",title:"Title 1",detail:"Leader"},
-                {id:"2",title:"Title 2",detail:"Senior"},
-                {id:"3",title:"Title 3",detail:"Junior"},
-            ]
+            jobs:[]
         }
+    },
+    mounted(){
+        fetch("http://localhost:3000/jobs")
+        .then((response)=>{
+            //return response value
+            return response.json();
+        })
+        .then((datas)=>{
+            //push db data
+            this.jobs = datas;
+        })
+        .catch((err)=>{
+            console.log(err.message);
+        })
     }
 }
 </script>
@@ -27,3 +37,4 @@ export default {
         color: palevioletred;
     }
 </style>
+//fetch function ko use yin ever resolve pyan lote pay ya ml
