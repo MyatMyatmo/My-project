@@ -1,5 +1,8 @@
 <template>
-  <h1>Job Detail {{id}}</h1>
+  <div v-if="job">
+    <h1>title - {{job.title}}</h1>
+    <p>detail - {{job.detail}}</p>
+  </div>
 </template>
 
 <script>

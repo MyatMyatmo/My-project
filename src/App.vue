@@ -49,3 +49,8 @@ export default {
 }
 </style>
 // "dev": "json-server --watch database/db.json" (json server run shortcut)
+
+// to get api use json server 
+
+// to user json server (call npm package)
+//npm package (npm install -g json-server)
